@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash -x
+cd /var/jenkins_home
+git init
+git config --global user.email &quot;bucksnbuccos@gmail.com&quot;
+git config --global user.name &quot;Nick Sansone&quot;
+echo &apos;**&apos; &gt; .gitignore
+echo &apos;!**/*.xml&apos; &gt;&gt; .gitignore
+echo &apos;!jobs&apos; &gt;&gt; .gitignore
+echo &apos;jobs/*&apos; &gt;&gt; .gitignore
+echo &apos;!jobs/*/&apos; &gt;&gt; .gitignore
+echo &apos;jobs/*/*&apos; &gt;&gt; .gitignore
+echo &apos;!jobs/*/*.xml&apos; &gt;&gt; .gitignore
+git add -A
+git status
+git commit -m &quot;committing contents of jenkins_home at $(date &apos;+%Y-%m-%d %H:%M:%S&apos;)&quot;
+git remote add origin https://github.com/bucksnbucs/jenkins-repo.git
+git remote -v
+git push -u origin master
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
