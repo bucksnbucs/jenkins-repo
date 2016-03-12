@@ -13,8 +13,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cp /var/jenkins_home/workspace/sample-war/target/*.war /var/docker/tomcat/target/sample.war
-cd /var/docker/tomcat
+      <command>cd /var/docker/tomcat
 sudo docker build -t mytomcat .
 sudo docker tag mytomcat localhost:5000/mytomcat
 sudo docker push localhost:5000/mytomcat

@@ -51,7 +51,12 @@
   <publishers/>
   <buildWrappers/>
   <prebuilders/>
-  <postbuilders/>
+  <postbuilders>
+    <hudson.tasks.Shell>
+      <command>cp ${WORKSPACE}/target/*.war /var/docker/tomcat/target/sample.war
+</command>
+    </hudson.tasks.Shell>
+  </postbuilders>
   <runPostStepsIfResult>
     <name>FAILURE</name>
     <ordinal>2</ordinal>

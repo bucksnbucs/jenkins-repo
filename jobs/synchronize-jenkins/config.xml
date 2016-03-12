@@ -13,7 +13,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>#!/bin/bash -x
+      <command>#!/bin/bash
 cd /var/jenkins_home
 git init
 git config --global user.email &quot;bucksnbuccos@gmail.com&quot;
