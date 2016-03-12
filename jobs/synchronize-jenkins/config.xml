@@ -30,6 +30,7 @@ git status
 git commit -m &quot;committing contents of jenkins_home at $(date &apos;+%Y-%m-%d %H:%M:%S&apos;)&quot;
 git remote set-url origin &quot;https://bucksnbucs:sc00byd00@github.com/bucksnbucs/jenkins-repo.git&quot;
 git remote -v
+git pull
 git push -u origin master
 </command>
     </hudson.tasks.Shell>
