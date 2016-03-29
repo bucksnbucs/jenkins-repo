@@ -28,7 +28,7 @@ echo &apos;!jobs/*/*.xml&apos; &gt;&gt; .gitignore
 git add -A
 git status
 git commit -m &quot;committing contents of jenkins_home at $(date &apos;+%Y-%m-%d %H:%M:%S&apos;)&quot;
-git remote set-url origin &quot;https://bucksnbucs@github.com/bucksnbucs/jenkins-repo.git&quot;
+git remote set-url origin &quot;https://github.com/bucksnbucs/jenkins-repo.git&quot;
 git remote -v
 git pull origin master
 git push -u origin master
